@@ -1,0 +1,9 @@
+<div class="pagination">
+    <% for(i = 1;i<= numberOfPages;i++){ %>
+    <a
+        class="<%if(currentPage === i){%> active-page <%}%> <%if(currentPage == 0 ){%><%if(i == 1 ){%> active-page <%}%><%}%>"
+        href="?page=<%= i %>"
+        ><%= i %></a
+    >
+    <% } %>
+</div>

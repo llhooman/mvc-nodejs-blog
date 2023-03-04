@@ -1,0 +1,8 @@
+<div class="post-container">
+    <p><%= categories[post.categoryId-1].name %></p>
+    <div class="post">
+        <img src="/images/<%= post.image%>" alt="<%= post.title%>" />
+        <h3><%= post.title%></h3>
+        <a class="btn" href="posts/<%= post.id%>">Read more</a>
+    </div>
+</div>

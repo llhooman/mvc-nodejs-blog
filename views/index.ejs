@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/style.scss" />
+        <title>personal blog</title>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('layouts/header',{user}) %>
+            <div class="categories">
+                <% categories.forEach(function(category){ %>
+                <ul>
+                    <a class="category" href="category/<%= category.id %>">
+                        <li><%= category.name %></li>
+                    </a>
+                </ul>
+
+                <% }); %>
+            </div>
+            <%- include('layouts/firstpost',{numberOfPosts}) %>
+            <div class="hr"></div>
+            <div class="all-articles">
+                <h2>All Articles</h2>
+                <div class="articles">
+                    <% posts.slice(1,posts.length).forEach(function(post){ %>
+                    <%- include('layouts/post',{post})%> <% }); %>
+                </div>
+            </div>
+            <%- include('layouts/pagination',{numberOfPages,currentPage})%> <%-
+            include('layouts/footer','')%>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+const express = require("express");
+const router = express.Router();
+const homePageController = require("../controllers/homePageController");
+const aboutPageController = require("../controllers/aboutPageController");
+const contactPageController = require("../controllers/contactPageController");
+const categoryPageController = require("../controllers/categoryPageController");
+const postPageController = require("../controllers/postPageController");
+const searchController = require("../controllers/searchController");
+const loginController = require("../controllers/loginController");
+const signupController = require("../controllers/signupController");
+const passport = require("passport");
+router.get("/", homePageController);
+router.get("/about", aboutPageController);
+router.get("/contact", contactPageController);
+router.get("/category/:id", categoryPageController);
+router.get("/posts/:id", postPageController);
+router.get("/search", searchController);
+router.get("/login", loginController.get);
+router.post("/login", loginController.post);
+router.get("/signup", signupController.get);
+router.post("/signup", signupController.post);
+
+module.exports = router;
